@@ -1,0 +1,39 @@
+using System;
+
+namespace MyCompiler
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int num = 0;
+            
+            num = int.Parse(Console.ReadLine());
+
+            int original = num;
+            int reverse = 0;
+
+            while (num > 0)
+            {
+                int temp = num % 10;
+
+                reverse = reverse * 10 + temp;
+
+                num /= 10;
+            }
+            
+            Console.WriteLine("입력 : " + original);
+            Console.WriteLine("출력 : ");
+            Console.WriteLine("뒤집은 숫자: " + reverse);
+
+            if (original == reverse)
+            {
+                Console.WriteLine("팰린드롬 여부: YES");
+            }
+            else
+            {
+                Console.WriteLine("팰린드롬 여부: NO");
+            }
+        }
+    }
+}
