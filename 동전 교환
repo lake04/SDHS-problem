@@ -1,0 +1,36 @@
+using System;
+
+namespace MyCompiler
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int num = int.Parse(Console.ReadLine());
+            int original = num;
+
+            int c500 = num / 500;
+            num %= 500;
+
+            int c100 = num / 100;
+            num %= 100;
+
+            int c50 = num / 50;
+            num %= 50;
+
+            int c10 = num / 10;
+
+            int total = c500 + c100 + c50 + c10;
+
+            Console.WriteLine("입력 : " + original);
+            Console.WriteLine("출력 : ");
+            Console.WriteLine("500원 : " + c500 + "개");
+            Console.WriteLine("100원 : " + c100 + "개");
+            Console.WriteLine("50원 : " + c50 + "개");
+            Console.WriteLine("10원 : " + c10 + "개");
+
+            Console.WriteLine();
+            Console.WriteLine("최소 동전 개수 : " + total + "개");
+        }
+    }
+}
