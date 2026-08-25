@@ -1,0 +1,38 @@
+using System;
+
+namespace MyCompiler
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int N = 0;
+            long [] dp = new long[51];
+
+            dp[1] = 1;
+            dp[2] = 2;
+
+            while (true)
+            {
+                Console.Write("계단의 높이 : ");
+                N = int.Parse(Console.ReadLine());
+
+                if (N >= 1 && N <= 50)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("1이상 50이하 정수를 입력해주세요.");
+                }
+            }
+
+            for (int i = 3; i <= N; i++)
+            {
+                dp[i] = dp[i - 1] + dp[i - 2];
+            }
+
+            Console.Write("올라가는 방법의 수 : " + dp[N]);
+        }
+    }
+}
